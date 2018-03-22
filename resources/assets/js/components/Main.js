@@ -1,44 +1,45 @@
 import React, { Component } from 'react';
 
 import CssBaseline from 'material-ui/CssBaseline';
-import Header from './common/Header'
+import Header from './common/Header';
+import Products from './Products';
 
 class Main extends Component {
-    constructor() {
+
+    constructor () {
+
         super();
 
         this.state = {
             products: []
-        }
-    }
+        };
 
-    componentDidMount() {
-        fetch('/api/products')
-        .then(res => res.json())
-        .then(products => {
-            this.setState({products})
-        })
-    }
+}
 
-    renderProducts() {
-        return this.state.products.map(product => {
-            return (
-                <li key={product.id}>{product.title}</li>
-            )
-        });
-    }
+    componentDidMount () {
 
-    render() {
+        fetch('/api/products').
+        then((res) => res.json()).
+        then((products) => {
+
+            this.setState({products});
+
+});
+
+}
+
+    render () {
+
         return (
             <div>
             <CssBaseline />
             <Header />
-                <ul>
-                    {this.renderProducts()}
-                </ul>
+            <Products products={this.state.products}/>
             </div>
-        )
-    }
+        );
+
+}
+
 }
 
 export default Main;

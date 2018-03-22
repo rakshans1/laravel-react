@@ -12,7 +12,7 @@
         "ssh": "cd laradock && docker-compose exec workspace bash",
         "server:stop": "docker-compose stop",
         "build:app": "docker build -t rakshans1/laravel-react -f app.dockerfile .",
-        "build:web":"docker build -t rakshans1/laravel-react-web -f web.dockerfile .",
+        "build:web": "docker build -t rakshans1/laravel-react-web -f web.dockerfile .",
         "server:prod": "docker-compose -f docker-compose.prod.yml up -d"
     },
     "devDependencies": {

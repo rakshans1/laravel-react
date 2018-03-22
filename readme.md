@@ -9,3 +9,6 @@ php artisan db:seed --class=ProductsTableSeeder
 
 
 php artisan preset react
+
+
+php artisan migrate:refresh --seed
